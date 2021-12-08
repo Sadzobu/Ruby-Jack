@@ -21,7 +21,7 @@ class Main
     case user_input
     when '1'
       if user.cards < 3
-        user.deal
+        user.hit
       else
         puts 'cant take any more cards'
       end
@@ -34,8 +34,8 @@ class Main
   end
 
   def dealers_turn(user, dealer)
-    if dealer.card_value < 17 && dealer.cards < 3
-      dealer.deal
+    if dealer.count_value < 17 && dealer.cards < 3
+      dealer.hit
     end
     users_turn(user, dealer)
   end

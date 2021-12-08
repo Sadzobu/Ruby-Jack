@@ -6,9 +6,9 @@ class Game
   end
 
   def define_winner(player1, player2)
-    if player1.card_value < 22 && player1.card_value == player2.card_value
+    if player1.count_value < 22 && player1.count_value == player2.count_value
       return nil
-    elsif player2.card_value > 21 || player1.card_value < 22 && (21 - player1.card_value < 21 - player2.card_value)
+    elsif player2.count_value > 21 || player1.count_value < 22 && (21 - player1.count_value < 21 - player2.count_value)
       return player1
     else
       return player2

@@ -43,7 +43,7 @@ module Interface
     end
 
     def show_value(player)
-      print player.card_value
+      print player.count_value
     end
 
     def show_money_available(player)
