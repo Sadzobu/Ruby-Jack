@@ -15,7 +15,10 @@ module Interface
     end
 
     def show_menu
-      puts "1 :deal 2: pass 3: flip"
+      puts "Choose action:"
+      puts "Press '1' to hit a new card"
+      puts "Press '2' to pass turn to the Dealer"
+      puts "Press '3' to flip cards, and see the results"
     end
 
     def show_interface(user, dealer)
