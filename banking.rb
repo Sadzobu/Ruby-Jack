@@ -1,17 +1,17 @@
 module Banking
   def self.included(base)
-    base.include ClassMethods
+    base.include InstanceMethods
   end
 
-  module ClassMethods
-    def split_money(player1, player2)
-      give_money(player1, 10)
-      give_money(player2, 10)
+  module InstanceMethods
+    def split_money(user, dealer)
+      give_money(user, 10)
+      give_money(dealer, 10)
     end
 
-    def place_bets(player1, player2)
-      get_money(player1, 10)
-      get_money(player2, 10)
+    def place_bets(user, dealer)
+      get_money(user, 10)
+      get_money(dealer, 10)
     end
 
     def payout(player)

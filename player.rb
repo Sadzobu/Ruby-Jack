@@ -2,19 +2,18 @@ class Player
   attr_accessor :money_available, :current_cards, :name
   attr_reader :game
 
-  def initialize(name, game)
+  def initialize(name)
     @name = name
     @money_available = 100
     @current_cards = []
-    @game = game
   end
 
-  def new_game
-    self.current_cards = [pick_card, pick_card]
+  def new_game(deck)
+    self.current_cards = [pick_card(deck), pick_card(deck)]
   end
 
-  def hit
-    current_cards << pick_card
+  def hit(deck)
+    current_cards << pick_card(deck)
   end
 
   def cards
@@ -36,10 +35,9 @@ class Player
 
   private
 
-  def pick_card
-    current_deck = game.deck
-    picked_card = current_deck.to_a.sample
-    current_deck.delete(picked_card[0])
+  def pick_card(deck)
+    picked_card = deck.to_a.sample
+    deck.delete(picked_card[0])
     picked_card
   end
 end
