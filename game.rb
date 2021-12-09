@@ -6,7 +6,8 @@ class Game
   include Banking
   include Interface
 
-  attr_accessor :deck, :user, :dealer
+  attr_accessor :deck
+  attr_reader :user, :dealer
 
   def initialize(user, dealer)
     @user = user
