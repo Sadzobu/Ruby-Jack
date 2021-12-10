@@ -26,11 +26,19 @@ class Game
       if user.cards < 3
         user.hit(deck)
       else
-        puts 'Cant take any more cards!'
+        puts 'Cant take any more cards! Press anything to check results:'
+        gets.chomp
+        return
       end
       dealers_turn
     when '2'
-      dealers_turn
+      if user.passed
+        puts 'You have already passed! Press anything to check results:'
+        gets.chomp
+      else
+        user.passed = true
+        dealers_turn
+      end
     end
   end
 

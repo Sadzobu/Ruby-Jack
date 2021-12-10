@@ -1,15 +1,17 @@
 class Player
-  attr_accessor :money_available, :current_cards
+  attr_accessor :money_available, :current_cards, :passed
   attr_reader :name
 
   def initialize(name)
     @name = name
     @money_available = 100
     @current_cards = []
+    @passed = false
   end
 
   def new_game(deck)
     self.current_cards = [pick_card(deck), pick_card(deck)]
+    self.passed = false
   end
 
   def hit(deck)
